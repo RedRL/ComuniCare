@@ -296,7 +296,7 @@ const en: Messages = {
     analyzeNow: "Analyze now",
     primary: "Primary interpretation",
     breakdown: "Probability breakdown",
-    signals: "Detected signals",
+    signals: "Observed cues",
     suggestions: "Worth trying",
     seePatterns: "See patterns in My Baby",
     whyChanged: "Why it changed:",
@@ -362,14 +362,14 @@ const en: Messages = {
   },
   about: {
     eyebrow: "About",
-    title: "Tiny signals, big meaning",
+    title: "Small moments, big meaning",
     subtitle: "From crying to communication.",
     s1Title: "Babies are always communicating",
     s1Body:
-      "Long before words, babies signal their needs through facial expression, body movement, posture, sound, and engagement. ComuniCare reads those non-verbal cues and gently puts them into language.",
+      "Long before words, babies express their needs through facial expression, body movement, posture, sound, and engagement. ComuniCare reads those non-verbal cues and gently puts them into language.",
     s2Title: "How the AI reasons",
     s2Body:
-      "The model looks at multiple signals together — for example, soft eye contact + relaxed shoulders + rhythmic breathing — and weighs them against likely states. The breakdown you see is a probability distribution, not a verdict.",
+      "The model looks at multiple cues together — for example, soft eye contact + relaxed shoulders + rhythmic breathing — and weighs them against likely states. The breakdown you see is a probability distribution, not a verdict.",
     s3Title: "Designed to support, not replace, you",
     s3Body:
       "You know your baby best. ComuniCare supports your intuition and reduces uncertainty in hard moments. It gets more personal over time as you confirm or correct results.",
@@ -379,7 +379,7 @@ const en: Messages = {
     whyTitle: "Why this matters",
     why1: "Reduces uncertainty in tired, emotional moments",
     why2: "Helps parents respond, not just react",
-    why3: "Builds confidence with every confirmed signal",
+    why3: "Builds confidence with every confirmed interpretation",
     privacyTitle: "Privacy by design",
     privacyBody:
       "Everything in this demo lives on your device. No accounts, no upload to a server. Optional context only.",
@@ -434,7 +434,7 @@ const en: Messages = {
     unmute: "Unmute",
   },
   overlay: {
-    title: "Interpreting signals…",
+    title: "Composing interpretation…",
     realAIBadge: "Real AI · Gemini",
     stagesVideo: [
       "Sampling key frames…",
@@ -496,14 +496,14 @@ const he: Messages = {
     eyebrow: "מבכי לתקשורת",
     titleLine1: "התינוק שלך מתקשר.",
     titleLine2: "ComuniCare עוזרת לך להבין.",
-    body: "מלווה AI שקוראת איתותים לא-מילוליים — הבעות פנים, תנועת גוף, צלילים — ומתרגמת בעדינות מה התינוק עשוי לתקשר.",
+    body: "מלווה AI שמזהה רמזים לא-מילוליים — הבעות פנים, תנועת גוף, צלילים — ומתרגמת בעדינות מה התינוק עשוי לתקשר.",
     ctaStart: "התחילו להבין",
     ctaContinue: "המשך",
     ctaDemo: "נסו דמו עם סרטון תינוק",
     feature1Title: "ניתוח של רגע",
     feature1Body: "העלו קליפ קצר וקבלו פרשנות שקטה ומובנית בשניות.",
     feature2Title: "זיהוי דפוסים",
-    feature2Body: "ראו מגמות לאורך היום כדי לצפות איתותים לפני שמסלימים.",
+    feature2Body: "ראו מגמות לאורך היום כדי לזהות צורך מתפתח לפני שהוא מסלים.",
     feature3Title: "לבנות בטחון",
     feature3Body: "מחזק את האינטואיציה שלכם. מתאים את עצמו עם הזמן.",
     pillsImmediate: "עובד מיידית",
@@ -557,7 +557,7 @@ const he: Messages = {
     analyzeNow: "נתחו עכשיו",
     primary: "פרשנות עיקרית",
     breakdown: "פילוח הסתברויות",
-    signals: "איתותים שזוהו",
+    signals: "סימנים שנצפו",
     suggestions: "כדאי לנסות",
     seePatterns: "ראו דפוסים ב\u201cהתינוק שלי\u201d",
     whyChanged: "מה השתנה:",
@@ -622,14 +622,14 @@ const he: Messages = {
   },
   about: {
     eyebrow: "אודות",
-    title: "איתותים קטנים, משמעות גדולה",
+    title: "רגעים קטנים, משמעות גדולה",
     subtitle: "מבכי לתקשורת.",
     s1Title: "תינוקות מתקשרים תמיד",
     s1Body:
-      "הרבה לפני המילים, תינוקות משדרים את הצרכים שלהם דרך הבעות פנים, תנועת גוף, יציבה, צלילים ומעורבות. ComuniCare קוראת את האיתותים האלה ומנסחת אותם בעדינות.",
+      "הרבה לפני המילים, תינוקות מבטאים את הצרכים שלהם דרך הבעות פנים, תנועת גוף, יציבה, צלילים ומעורבות. ComuniCare מזהה את הרמזים האלה ומנסחת אותם בעדינות.",
     s2Title: "איך ה-AI חושב",
     s2Body:
-      "המודל מסתכל על מספר איתותים ביחד — למשל קשר עין רך + כתפיים רפויות + נשימה קצובה — ומשקלל אותם מול מצבים אפשריים. מה שאתם רואים זו התפלגות הסתברויות, לא פסיקה.",
+      "המודל מסתכל על כמה רמזים ביחד — למשל קשר עין רך + כתפיים רפויות + נשימה קצובה — ומשקלל אותם מול מצבים אפשריים. מה שאתם רואים זו התפלגות הסתברויות, לא פסיקה.",
     s3Title: "תוכננה לתמוך בכם, לא להחליף",
     s3Body:
       "אתם מכירים את התינוק שלכם הכי טוב. ComuniCare תומכת באינטואיציה שלכם ומפחיתה אי-ודאות ברגעים קשים. היא הופכת אישית יותר עם הזמן ככל שאתם מאשרים או מתקנים תוצאות.",
@@ -639,7 +639,7 @@ const he: Messages = {
     whyTitle: "למה זה משנה",
     why1: "מפחית אי-ודאות ברגעים עייפים ורגשיים",
     why2: "עוזר להורים להגיב, לא רק להגיב מיד",
-    why3: "בונה ביטחון עם כל איתות שמאושר",
+    why3: "בונה ביטחון עם כל פרשנות שמאושרת",
     privacyTitle: "פרטיות מובנית",
     privacyBody:
       "כל מה שבדמו הזה נשאר במכשיר שלך. ללא חשבונות, ללא העלאה לשרת. הקשר רק אם תבחרו.",
@@ -694,7 +694,7 @@ const he: Messages = {
     unmute: "ביטול השתקה",
   },
   overlay: {
-    title: "מפרש איתותים…",
+    title: "מנסח פרשנות…",
     realAIBadge: "AI אמיתי · Gemini",
     stagesVideo: [
       "דוגם פריימים מרכזיים…",

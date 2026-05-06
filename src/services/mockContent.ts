@@ -57,8 +57,7 @@ const en: MockContent = {
       "The baby seems calm and content. Relaxed cues suggest this is a good moment for gentle interaction.",
     playful:
       "The baby appears engaged and playful. Bright facial cues suggest readiness for connection.",
-    other:
-      "The signals are mixed. A short observation pause may help clarify.",
+    other: "The cues are mixed. A short observation pause may help clarify.",
   },
   suggestions: {
     tired: [
@@ -144,7 +143,7 @@ const en: MockContent = {
       detail: "Run a quick demo or upload a clip to start building patterns.",
     },
     tiredEvening: {
-      title: "Tired signals cluster in the evening",
+      title: "Tiredness tends to cluster in the evening",
       detail:
         "Most tired states appear between 5pm and 9pm. Consider an earlier wind-down.",
     },
@@ -167,28 +166,28 @@ const en: MockContent = {
 
 const he: MockContent = {
   fallbackTops: {
-    tired: "איתותים עדינים",
-    overstimulated: "איתותי גוף",
-    hungry: "איתותי פה וידיים",
+    tired: "סימנים עדינים",
+    overstimulated: "שפת גוף",
+    hungry: "תנועות פה וידיים",
     discomfort: "צלילים חדים",
-    content: "איתותים רפויים",
+    content: "גוף רגוע",
     playful: "הבעות פנים בהירות",
-    other: "איתותים מעורבים",
+    other: "סימנים מעורבים",
   },
   explanations: {
     tired:
-      "ייתכן שהתינוק/ת מתקשר/ת עייפות. איתותים עדינים מצביעים על צורך להירגע ולנוח.",
+      "ייתכן שהתינוק/ת מתקשר/ת עייפות. סימנים עדינים מצביעים על צורך להירגע ולנוח.",
     overstimulated:
-      "ייתכן שהתינוק/ת מרגיש/ה מוצף/ת. איתותי גוף מצביעים שייתכן שהסביבה פעילה מדי כרגע.",
+      "ייתכן שהתינוק/ת מרגיש/ה מוצף/ת. שפת הגוף מצביעה שייתכן שהסביבה פעילה מדי כרגע.",
     hungry:
-      "האיתותים האלה עשויים להעיד על רעב. איתותי פה וידיים מופיעים לרוב לפני שבכי חזק מתחיל.",
+      "התנועות האלה עשויות להעיד על רעב. סימני פה וידיים מופיעים לרוב לפני שבכי חזק מתחיל.",
     discomfort:
       "ייתכן שהתינוק/ת מבטא/ת אי-נוחות פיזית. צלילים חדים שווים תשומת לב.",
     content:
-      "התינוק/ת נראה/ת רגוע/ה ושבע/ה רצון. איתותים רפויים מצביעים שזה רגע טוב לאינטראקציה עדינה.",
+      "התינוק/ת נראה/ת רגוע/ה ושבע/ה רצון. גוף רפוי מצביע שזה רגע טוב לאינטראקציה עדינה.",
     playful:
       "התינוק/ת נראה/ת מעורב/ת ומשחקי/ת. הבעות פנים בהירות מצביעות על מוכנות לקשר.",
-    other: "האיתותים מעורבים. הפסקת התבוננות קצרה עשויה לעזור להבהיר.",
+    other: "הסימנים מעורבים. הפסקת התבוננות קצרה עשויה לעזור להבהיר.",
   },
   suggestions: {
     tired: [
@@ -205,7 +204,7 @@ const he: MockContent = {
     ],
     hungry: [
       "הציעו האכלה כשאתם מוכנים",
-      "שימו לב לאיתותים מוקדמים כדי למנוע רעב מוגבר",
+      "שימו לב לסימנים מוקדמים כדי למנוע רעב מוגבר",
       "נסו סביבה רגועה להאכלה",
     ],
     discomfort: [
@@ -247,7 +246,7 @@ const he: MockContent = {
     },
     tryDemo: {
       title: "נסו קודם את הדמו",
-      body: "הדרך המהירה ביותר לראות איך ComuniCare קוראת איתותים לא-מילוליים.",
+      body: "הדרך המהירה ביותר לראות איך ComuniCare מזהה רמזים לא-מילוליים.",
     },
     windDown: {
       title: "שמרו על חלון ההירגעות",
@@ -272,12 +271,12 @@ const he: MockContent = {
       detail: "הריצו דמו מהיר או העלו קליפ כדי להתחיל לבנות דפוסים.",
     },
     tiredEvening: {
-      title: "איתותי עייפות מתרכזים בערב",
+      title: "עייפות נוטה להופיע בערב",
       detail: "רוב מצבי העייפות מופיעים בין 17:00 ל-21:00. שקלו הירגעות מוקדמת יותר.",
     },
     hungerInterval: (h) => ({
       title: `רעב מופיע כ-${h} שעות לאחר האכלה`,
-      detail: "קצב עקבי עוזר לכם לצפות איתותים לפני שהם מסלימים.",
+      detail: "קצב עקבי עוזר לכם לזהות צורך מתפתח לפני שהוא מסלים.",
     }),
     confirmed: (n) => ({
       title: `אישרת ${n} פרשנויות`,
