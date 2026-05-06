@@ -23,7 +23,7 @@ export function LandingPage() {
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <img
-            src="/logo.png"
+            src={`${import.meta.env.BASE_URL}logo.png`}
             alt={t.app.name}
             className="h-9 w-9 rounded-2xl object-contain"
           />

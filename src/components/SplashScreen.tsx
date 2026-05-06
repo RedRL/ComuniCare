@@ -39,7 +39,7 @@ export function SplashScreen({ durationMs = 5000, onDone }: Props) {
     >
       <div className="relative h-full w-full max-w-[440px]">
         <img
-          src="/banner.png"
+          src={`${import.meta.env.BASE_URL}banner.png`}
           alt={t.app.name}
           className="absolute inset-0 h-full w-full select-none object-contain"
           draggable={false}

@@ -27,7 +27,7 @@ const DEFAULT_LABELS = {
 };
 
 export function DemoVideoPlayer({
-  src = "/demo-baby-video.mp4",
+  src = `${import.meta.env.BASE_URL}demo-baby-video.mp4`,
   showOverlay = true,
   startMuted = false,
   labels = DEFAULT_LABELS,
