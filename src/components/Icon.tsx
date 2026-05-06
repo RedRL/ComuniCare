@@ -130,3 +130,23 @@ export const MoonIcon = (props: IconProps) => (
     <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
   </svg>
 );
+
+export const CameraIcon = (props: IconProps) => (
+  <svg {...base(props)} {...props}>
+    <path d="M4 7h3l2-2h6l2 2h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1Z" />
+    <circle cx="12" cy="13" r="3.5" />
+  </svg>
+);
+
+export const MicIcon = (props: IconProps) => (
+  <svg {...base(props)} {...props}>
+    <rect x="9" y="3" width="6" height="12" rx="3" />
+    <path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6" />
+  </svg>
+);
+
+export const StopIcon = (props: IconProps) => (
+  <svg {...base(props)} {...props}>
+    <rect x="6" y="6" width="12" height="12" rx="2" />
+  </svg>
+);

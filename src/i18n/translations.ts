@@ -87,6 +87,21 @@ export interface Messages {
     audioHint: string;
     imageLabel: string;
     imageHint: string;
+    uploadAction: string;
+    recordVideoAction: string;
+    recordAudioAction: string;
+    takePhotoAction: string;
+  };
+  recorder: {
+    title: string;
+    permissionDenied: string;
+    unsupported: string;
+    start: string;
+    stop: string;
+    retake: string;
+    use: string;
+    cancel: string;
+    elapsed: (mmss: string) => string;
   };
   refine: {
     title: string;
@@ -311,12 +326,27 @@ const en: Messages = {
     whyChanged: "Why it changed:",
   },
   upload: {
-    videoLabel: "Upload video",
+    videoLabel: "Video",
     videoHint: "Movement, posture & engagement",
-    audioLabel: "Upload audio",
+    audioLabel: "Audio",
     audioHint: "Cry rhythm & intensity",
-    imageLabel: "Upload image",
+    imageLabel: "Photo",
     imageHint: "Facial expression",
+    uploadAction: "Upload",
+    recordVideoAction: "Record",
+    recordAudioAction: "Record",
+    takePhotoAction: "Camera",
+  },
+  recorder: {
+    title: "Record audio",
+    permissionDenied: "Microphone permission was denied. Enable it in your browser settings to record audio.",
+    unsupported: "Audio recording isn't supported on this browser. Try uploading a file instead.",
+    start: "Start recording",
+    stop: "Stop",
+    retake: "Retake",
+    use: "Use recording",
+    cancel: "Cancel",
+    elapsed: (mmss) => `Recording · ${mmss}`,
   },
   refine: {
     title: "Want to improve accuracy?",
@@ -577,12 +607,27 @@ const he: Messages = {
     whyChanged: "מה השתנה:",
   },
   upload: {
-    videoLabel: "העלאת וידאו",
+    videoLabel: "וידאו",
     videoHint: "תנועה, יציבה ומעורבות",
-    audioLabel: "העלאת אודיו",
+    audioLabel: "אודיו",
     audioHint: "קצב ועוצמה של בכי",
-    imageLabel: "העלאת תמונה",
+    imageLabel: "תמונה",
     imageHint: "הבעת פנים",
+    uploadAction: "העלאה",
+    recordVideoAction: "הקלטה",
+    recordAudioAction: "הקלטה",
+    takePhotoAction: "מצלמה",
+  },
+  recorder: {
+    title: "הקלטת אודיו",
+    permissionDenied: "אין הרשאת מיקרופון. אפשרו אותה בהגדרות הדפדפן כדי להקליט.",
+    unsupported: "הקלטת אודיו אינה נתמכת בדפדפן הזה. אפשר להעלות קובץ במקום.",
+    start: "התחילו הקלטה",
+    stop: "עצרו",
+    retake: "הקלטה חדשה",
+    use: "השתמשו בהקלטה",
+    cancel: "ביטול",
+    elapsed: (mmss) => `מקליט · ${mmss}`,
   },
   refine: {
     title: "רוצים לשפר את הדיוק?",
