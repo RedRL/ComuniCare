@@ -21,6 +21,7 @@ import { useBabyProfile } from "../hooks/useBabyProfile";
 import { useLanguage } from "../i18n/LanguageContext";
 import type { Messages } from "../i18n/translations";
 import type {
+  BabySex,
   BabyState,
   ParentAdvice,
   PersonalInsight,
@@ -29,12 +30,31 @@ import { aiService } from "../services/aiService";
 
 function formatAge(
   age: ReturnType<typeof useBabyAge>,
-  t: Messages
+  t: Messages,
+  sex?: BabySex
 ): string | undefined {
   if (!age) return undefined;
-  if (age.totalDays < 14) return t.age.days(age.totalDays);
-  if (age.totalDays < 90) return t.age.weeks(Math.floor(age.totalDays / 7));
-  return t.age.months(Math.floor(age.totalMonths));
+  if (age.totalDays < 14) return t.age.days(age.totalDays, sex);
+  if (age.totalDays < 90)
+    return t.age.weeks(Math.floor(age.totalDays / 7), sex);
+  return t.age.months(Math.floor(age.totalMonths), sex);
+}
+
+function formatProfileSubtitle(
+  age: ReturnType<typeof useBabyAge>,
+  t: Messages,
+  language: string,
+  sex?: BabySex
+): string | undefined {
+  const ageText = formatAge(age, t, sex);
+  const sexLabel = sex
+    ? t.setup.sexOptions.find((option) => option.value === sex)?.label
+    : undefined;
+
+  if (language === "en" && sexLabel && ageText) {
+    return `${sexLabel} · ${ageText}`;
+  }
+  return ageText ?? sexLabel;
 }
 
 export function DashboardPage() {
@@ -92,7 +112,7 @@ export function DashboardPage() {
       <PageHeader
         eyebrow={t.dashboard.eyebrow}
         title={profile.name}
-        subtitle={formatAge(age, t)}
+        subtitle={formatProfileSubtitle(age, t, language, profile.sex)}
         action={
           <div className="flex flex-col items-end gap-1.5">
             <LanguageToggle compact />

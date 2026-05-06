@@ -168,7 +168,7 @@ const REFINE_SCHEMA = {
 
 const LANGUAGE_INSTRUCTIONS: Record<Language, string> = {
   en: "Respond in English. All natural-language fields (primaryLabel, explanation, signals, suggestions, rationale) MUST be in clear, calm English.",
-  he: "ענה/י בעברית בלבד. כל שדות הטקסט החופשי (primaryLabel, explanation, signals, suggestions, rationale) חייבים להיות בעברית טבעית, רגועה ומכבדת. שמור/י על מזהי המצב (primaryState, distribution keys) באנגלית כפי שמופיעים בסכמה.",
+  he: "ענה/י בעברית בלבד. כל שדות הטקסט החופשי (primaryLabel, explanation, signals, suggestions, rationale) חייבים להיות בעברית טבעית, רגועה ומכבדת. אם מין התינוק ידוע, השתמש/י בניסוח עברי מתאים לזכר או לנקבה. שמור/י על מזהי המצב (primaryState, distribution keys) באנגלית כפי שמופיעים בסכמה.",
 };
 
 const SYSTEM_INSTRUCTION_BASE = `You are ComuniCare, an AI that gently interprets a baby's non-verbal communication.
@@ -285,6 +285,9 @@ function buildContextText(
   if (input.fileName) parts.push(`Filename: ${input.fileName}.`);
   if (profile) {
     parts.push(`Baby's name: ${profile.name}.`);
+    if (profile.sex) {
+      parts.push(`Baby's sex: ${profile.sex === "female" ? "female" : "male"}.`);
+    }
     if (profile.birthDate) {
       const months =
         (Date.now() - new Date(profile.birthDate).getTime()) /
@@ -402,6 +405,9 @@ export async function refineAnalysisWithContext(
       ? `Wake duration so far: ${context.wakeDurationMinutes} minutes.`
       : "",
     context.freeText ? `Parent notes: ${context.freeText}.` : "",
+    profile?.sex
+      ? `Baby's sex: ${profile.sex === "female" ? "female" : "male"}.`
+      : "",
     profile?.feedingIntervalHours
       ? `Typical feeding interval: ${profile.feedingIntervalHours} h.`
       : "",

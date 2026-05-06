@@ -7,10 +7,13 @@ export type BabyState =
   | "playful"
   | "other";
 
+export type BabySex = "male" | "female";
+
 export interface BabyProfile {
   id: string;
   name: string;
   birthDate: string; // ISO date
+  sex?: BabySex;
   feedingIntervalHours?: number;
   wakeWindowMinutes?: number;
   notes?: string;

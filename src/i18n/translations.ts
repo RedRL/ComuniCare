@@ -1,3 +1,5 @@
+import type { BabySex } from "../models/types";
+
 export type Language = "en" | "he";
 
 export const SUPPORTED_LANGUAGES: Language[] = ["en", "he"];
@@ -41,6 +43,8 @@ export interface Messages {
     nameLabel: string;
     namePlaceholder: string;
     birthDateLabel: string;
+    sexLabel: string;
+    sexOptions: Array<{ label: string; value: BabySex }>;
     aiSectionTitle: string;
     aiCardTitle: string;
     aiCardBody: string;
@@ -164,9 +168,9 @@ export interface Messages {
     other: string;
   };
   age: {
-    days: (n: number) => string;
-    weeks: (n: number) => string;
-    months: (n: number) => string;
+    days: (n: number, sex?: BabySex) => string;
+    weeks: (n: number, sex?: BabySex) => string;
+    months: (n: number, sex?: BabySex) => string;
   };
   demo: {
     primaryLabel: string;
@@ -258,6 +262,11 @@ const en: Messages = {
     nameLabel: "Baby's name",
     namePlaceholder: "e.g. Maya",
     birthDateLabel: "Date of birth",
+    sexLabel: "Sex",
+    sexOptions: [
+      { label: "Boy", value: "male" },
+      { label: "Girl", value: "female" },
+    ],
     aiSectionTitle: "AI engine",
     aiCardTitle: "Use real AI (Gemini)",
     aiCardBody:
@@ -519,6 +528,11 @@ const he: Messages = {
     nameLabel: "שם התינוק/ת",
     namePlaceholder: "למשל מאיה",
     birthDateLabel: "תאריך לידה",
+    sexLabel: "מין התינוק/ת",
+    sexOptions: [
+      { label: "בן", value: "male" },
+      { label: "בת", value: "female" },
+    ],
     aiSectionTitle: "מנוע AI",
     aiCardTitle: "השתמשו ב-AI אמיתי (Gemini)",
     aiCardBody:
@@ -655,9 +669,18 @@ const he: Messages = {
     other: "אחר",
   },
   age: {
-    days: (n) => (n === 1 ? "בן יום" : `בן ${n} ימים`),
-    weeks: (n) => (n === 1 ? "בן שבוע" : `בן ${n} שבועות`),
-    months: (n) => (n === 1 ? "בן חודש" : `בן ${n} חודשים`),
+    days: (n, sex) => {
+      const prefix = sex === "female" ? "בת" : sex === "male" ? "בן" : "בן/בת";
+      return n === 1 ? `${prefix} יום` : `${prefix} ${n} ימים`;
+    },
+    weeks: (n, sex) => {
+      const prefix = sex === "female" ? "בת" : sex === "male" ? "בן" : "בן/בת";
+      return n === 1 ? `${prefix} שבוע` : `${prefix} ${n} שבועות`;
+    },
+    months: (n, sex) => {
+      const prefix = sex === "female" ? "בת" : sex === "male" ? "בן" : "בן/בת";
+      return n === 1 ? `${prefix} חודש` : `${prefix} ${n} חודשים`;
+    },
   },
   demo: {
     primaryLabel: "ככל הנראה עייף/ה ומעט מוצף/ת",

@@ -7,7 +7,7 @@ import { PageHeader } from "../components/PageHeader";
 import { useAIMode } from "../hooks/useAIMode";
 import { useBabyProfile } from "../hooks/useBabyProfile";
 import { useLanguage } from "../i18n/LanguageContext";
-import type { BabyProfile } from "../models/types";
+import type { BabyProfile, BabySex } from "../models/types";
 import { storage } from "../services/storageService";
 
 function todayMinusDays(days: number): string {
@@ -36,6 +36,7 @@ export function SetupPage() {
   const [birthDate, setBirthDate] = useState(
     profile?.birthDate?.slice(0, 10) ?? todayMinusDays(60)
   );
+  const [sex, setSex] = useState<BabySex | "">(profile?.sex ?? "");
   const [feedingIntervalHours, setFeeding] = useState<number | "">(
     profile?.feedingIntervalHours ?? 3
   );
@@ -52,6 +53,7 @@ export function SetupPage() {
       id: profile?.id ?? crypto.randomUUID(),
       name: name.trim(),
       birthDate: new Date(birthDate).toISOString(),
+      sex: sex || undefined,
       feedingIntervalHours:
         typeof feedingIntervalHours === "number"
           ? feedingIntervalHours
@@ -110,6 +112,33 @@ export function SetupPage() {
             max={new Date().toISOString().slice(0, 10)}
           />
         </div>
+
+        <fieldset>
+          <legend className="label">{t.setup.sexLabel}</legend>
+          <div className="grid grid-cols-2 gap-2">
+            {t.setup.sexOptions.map((option) => (
+              <label
+                key={option.value}
+                className={[
+                  "flex min-h-12 cursor-pointer items-center gap-2 rounded-2xl border px-3 py-2 text-sm font-medium transition",
+                  sex === option.value
+                    ? "border-brand-coral bg-brand-coralWash text-brand-navy shadow-sm"
+                    : "border-ink-900/10 bg-white/70 text-ink-700",
+                ].join(" ")}
+              >
+                <input
+                  type="radio"
+                  name="sex"
+                  value={option.value}
+                  checked={sex === option.value}
+                  onChange={() => setSex(option.value)}
+                  className="h-4 w-4 accent-brand-coral"
+                />
+                <span>{option.label}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
       </section>
 
       {keyAvailable && (
